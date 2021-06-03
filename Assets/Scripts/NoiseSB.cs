@@ -46,8 +46,14 @@ public static class NoiseSB
                     //noiseMap[x, y] = perlinValue;
                     noiseHeight += perlinValue * amplitude;
 
+                    //original code
                     amplitude *= persistance;
-                    frequncey *= lacunarity;   
+
+                    //persistance = Mathf.Sin(Time.time);
+
+                    //amplitude = Mathf.Sin(Time.time) * persistance;
+
+                    frequncey *= lacunarity;
                 }
 
                 if (noiseHeight > maxNoiseHeight)
@@ -72,3 +78,4 @@ public static class NoiseSB
         return noiseMap;
     }
 }
+
